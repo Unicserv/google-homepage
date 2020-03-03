@@ -103,7 +103,7 @@ main .button:focus {
     height:30px;
     display:inline-block;
 }
-.image-sprite-1:focus, .image-sprite-1:hover {
+a.image-sprite-1:hover, a.image-sprite-1:focus {
     opacity: .85;
 }
 .main-image{
