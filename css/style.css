@@ -11,32 +11,89 @@ body, body a {
 a:hover {
     text-decoration:underline;
 }
-body, header, main, footer  {
+.full-width {
+    width:100%;
+    text-align:center;
+}
+body, header, main  {
     width:100%;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
 }
-body, main {
+body {
     flex-direction: column;
 }
 header {
     flex: 0 1 auto;
 }
+header button {
+    border: 1px solid #4285f4;
+    font-weight: bold;
+    outline: none;
+    color:#ffffff;
+    line-height:28px;
+    padding:0 12px;
+    border-radius:2px;
+    background: #4285f4;
+    background: -moz-linear-gradient(top,#4387fd,#4683ea);
+    background: linear-gradient(top,#4387fd,#4683ea);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4387fd,endColorstr=#4683ea,GradientType=0);
+}
+header button:hover {
+    box-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
+header button:active {
+    -moz-box-shadow: inset 0 2px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 2px 0 rgba(0,0,0,.15);
+    background: #3c78dc;
+    background: -moz-linear-gradient(top,#3c7ae4,#3f76d3);
+    background: linear-gradient(top,#3c7ae4,#3f76d3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#3c7ae4,endColorstr=#3f76d3,GradientType=0);
+}
+.main-menu {
+    display:flex;
+    align-items:center;
+    margin:0 0 0 auto;   
+}
+.main-menu a, .main-menu button {
+    margin:0.5rem;
+}
 main {
     flex: 1 1 auto;
     flex-wrap: wrap;
 }
-footer {
-    flex: 0 1 auto;
+main .vertical-padding {
+    padding: 2rem 0 0 0;
 }
-.align-top {
-    align-self: center;
+main .button {
+    background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
 }
-.align-bottom {
-    align-self: center;
+main .button:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-color: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    color: #222;
 }
-
+main .button:focus {
+    border: 1px solid #4d90fe;
+    outline: none;
+}
 .image-sprite-1 {
     background-image:url("https://ssl.gstatic.com/gb/images/i1_1967ca6a.png");
     background-size: 528px 68px;
@@ -46,24 +103,94 @@ footer {
     height:30px;
     display:inline-block;
 }
-
-
-.main-menu {
-    display:flex;
-    align-items:center;
-    margin:0 0 0 auto;   
-}
-
-.main-menu a, .main-menu button {
-    margin:0.5rem;
-}
-
-.full-width {
-    width:100%;
-}
-
 .main-image{
     width:100%;
     max-width:272px;
     height:auto;
 }
+.search-container {
+    border:1px solid #dfe1e5;
+    border-radius:600px;
+    max-width:600px;
+    width:90%;
+    text-align:right;
+    margin:0 auto;
+    height:2.5rem;
+}
+.search-container::before {
+    content: url('data:image/svg+xml; utf8, <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>');
+    padding:.5rem;
+    position:absolute;
+    width:1.5rem;
+    opacity: .3;
+}
+.search-container:hover {
+    border-color:rgba(223,225,229,0);
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+}
+.search-container-content {
+    margin:0 0 0 2.5rem;
+}
+.main-input {
+    border:none;
+    width:100%;
+    background:transparent;
+    line-height:2.5rem;
+}
+.empty-space {
+    flex:1 1 100px;
+    z-index:-2;
+}
+.align-top {
+    align-self: start;
+}
+.align-bottom {
+    align-self: end;
+}
+footer {
+    position:fixed;
+    bottom:0;
+    background: #f2f2f2;
+    display:block;
+    width:100%;
+}
+footer, footer a {
+    font-size:15px;
+    color:rgba(0,0,0,.54);
+}
+footer a {
+    padding-right:1.5rem;
+}
+footer .navbar{
+    background: #f2f2f2;
+
+    line-height:40px;
+}
+footer .full-width {
+    padding: 0 2rem;
+    text-align:left;
+    box-sizing: border-box;
+    border-top: 1px solid #e4e4e4;
+}
+.left-align {
+    text-align:left;
+    width:50%;
+    float:left;
+}
+.right-align {
+    text-align:right;
+    width:50%;
+    float:right;
+}
+@media (max-width:800px) {
+    .main-image {
+        width: 50%;
+    }
+    footer a {
+        padding-right: .5rem;
+    }
+    footer .navbar {
+        line-height:25px;
+    }
+}
+
